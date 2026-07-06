@@ -1,23 +1,67 @@
-const homePage = document.getElementById("homePage");
+let current = 0;
 
-const wizardPage = document.getElementById("wizardPage");
+const steps =
+document.querySelectorAll(".step");
 
-const startButton = document.getElementById("startButton");
+const bar =
+document.getElementById("bar");
 
-const progressBar = document.getElementById("progressBar");
+const judul =
+document.getElementById("judul");
 
-startButton.onclick = function(){
+function mulai(){
 
-homePage.classList.add("hidden");
+document
+.getElementById("home")
+.classList.add("hidden");
 
-wizardPage.classList.remove("hidden");
-
-progressBar.style.width="14%";
+document
+.getElementById("wizard")
+.classList.remove("hidden");
 
 }
 
-document.getElementById("nextButton").onclick=function(){
+function tampilkan(){
 
-alert("Pada Bagian 3 kita akan masuk ke Tema Cerita.");
+steps.forEach(step=>step.classList.remove("active"));
+
+steps[current].classList.add("active");
+
+let persen=((current+1)/7)*100;
+
+bar.style.width=persen+"%";
+
+judul.innerHTML=
+"Langkah "+(current+1)+" dari 7";
 
 }
+
+function nextStep(){
+
+if(current<6){
+
+current++;
+
+tampilkan();
+
+}else{
+
+alert("Data siap dikirim ke Spreadsheet.");
+
+}
+
+}
+
+function prevStep(){
+
+if(current>0){
+
+current--;
+
+tampilkan();
+
+}
+
+}
+
+tampilkan();
