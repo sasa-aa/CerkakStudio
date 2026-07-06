@@ -5,7 +5,8 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Cerkak Studio</title>
 
@@ -19,7 +20,7 @@
 
 <!-- ================= BERANDA ================= -->
 
-<div id="homePage" class="card">
+<div id="home" class="card">
 
 <div class="logo">📖</div>
 
@@ -37,9 +38,9 @@ Media Pembelajaran Menulis Cerkak Basa Jawa
 
 </div>
 
-<button id="startButton">
+<button onclick="mulai()">
 
-Mulai Menulis →
+Mulai Menulis
 
 </button>
 
@@ -47,45 +48,115 @@ Mulai Menulis →
 
 <!-- ================= WIZARD ================= -->
 
-<div id="wizardPage" class="card hidden">
+<div id="wizard" class="card hidden">
 
 <div class="progress">
 
-<div class="progress-bar" id="progressBar"></div>
+<div id="bar" class="progress-bar"></div>
 
 </div>
 
-<h2>Langkah 1 dari 7</h2>
+<h2 id="judul">
 
-<h3>Identitas Siswa</h3>
+Langkah 1 dari 7
 
-<div class="form-group">
+</h2>
+
+<!-- STEP 1 -->
+
+<div class="step active">
 
 <label>Nama</label>
 
-<input type="text" id="nama">
-
-</div>
-
-<div class="form-group">
+<input type="text">
 
 <label>Kelas</label>
 
-<input type="text" id="kelas">
+<input type="text">
+
+<label>Absen</label>
+
+<input type="number">
 
 </div>
 
-<div class="form-group">
+<!-- STEP 2 -->
 
-<label>Nomor Absen</label>
+<div class="step">
 
-<input type="number" id="absen">
+<label>Tema Cerita</label>
+
+<select>
+
+<option>Persahabatan</option>
+
+<option>Keluarga</option>
+
+<option>Sekolah</option>
+
+<option>Budaya Jawa</option>
+
+<option>Lingkungan</option>
+
+<option>Bebas</option>
+
+</select>
 
 </div>
 
-<div class="button-group">
+<!-- STEP 3 -->
 
-<button id="nextButton">
+<div class="step">
+
+<h3>Tokoh dan Watak</h3>
+
+<p>(Akan kita lengkapi pada bagian berikutnya)</p>
+
+</div>
+
+<!-- STEP 4 -->
+
+<div class="step">
+
+<h3>Latar</h3>
+
+</div>
+
+<!-- STEP 5 -->
+
+<div class="step">
+
+<h3>Alur</h3>
+
+</div>
+
+<!-- STEP 6 -->
+
+<div class="step">
+
+<h3>Amanat</h3>
+
+</div>
+
+<!-- STEP 7 -->
+
+<div class="step">
+
+<h3>Menulis Cerkak</h3>
+
+<textarea rows="8"></textarea>
+
+</div>
+
+<div class="nav">
+
+<button onclick="prevStep()">
+
+← Sebelumnya
+
+</button>
+
+<button onclick="nextStep()">
 
 Berikutnya →
 
